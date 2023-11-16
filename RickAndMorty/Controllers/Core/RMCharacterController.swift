@@ -9,10 +9,10 @@ import UIKit
 
 /// Controller to show and search for Characters
 final class RMCharacterController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         title = "Character"
         
@@ -24,8 +24,18 @@ final class RMCharacterController: UIViewController {
                 URLQueryItem(name: "status", value: "alive")
             ]
         )
-        print(request.url)
+        print(request.url ?? "")
+        
+        RMService.shared.execute(request, expecting: RMCharacter.self) { result in
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                print("ERROR")
+                print(String(describing: error))
+            }
+        }
     }
     
-
+    
 }

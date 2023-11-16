@@ -12,14 +12,15 @@ final class RMRequest {
     
     /// API Constants
     private struct Constants {
-        static let baseUrl = "https://rickandmortyapi.com/api"
+        static let baseUrl = "https://jsonplaceholder.typicode.com/api"
+//        static let baseUrl = "https://rickandmortyapi.com/api"
     }
     
     /// Desired endpoint
     private let endpoint: RMEndpoint
     
     /// Path components forAPI, if any
-    private let pathComponents: Set<String>
+    private let pathComponents: [String]
     
     /// Constructed url for the api request in string format
     private let queryParameters: [URLQueryItem]
@@ -62,7 +63,7 @@ final class RMRequest {
     ///   - endpoint: Target endpoint
     ///   - pathComponents: Collection of Path components
     ///   - queryParameters: Collection of query parameters
-    public init(endpoint: RMEndpoint,  pathComponents: Set<String> = [], queryParameters: [URLQueryItem] = []) {
+    public init(endpoint: RMEndpoint,  pathComponents: [String] = [], queryParameters: [URLQueryItem] = []) {
         self.endpoint = endpoint
         self.pathComponents = pathComponents
         self.queryParameters = queryParameters
