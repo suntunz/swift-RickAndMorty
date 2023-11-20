@@ -12,8 +12,7 @@ final class RMRequest {
     
     /// API Constants
     private struct Constants {
-        static let baseUrl = "https://jsonplaceholder.typicode.com/api"
-//        static let baseUrl = "https://rickandmortyapi.com/api"
+        static let baseUrl = "https://rickandmortyapi.com/api"
     }
     
     /// Desired endpoint
